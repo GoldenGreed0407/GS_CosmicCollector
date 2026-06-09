@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour
 {
 
     [SerializeField] private float speed;
+    [SerializeField] private AudioSource som;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Projectile : MonoBehaviour
         }
         if (other.CompareTag("Debris"))
         {
+            som.Play();
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

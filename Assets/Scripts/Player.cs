@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [Header("Player")]
     [SerializeField] private float velocidade;
     [SerializeField] private Vector3 StartPosition;
+    [SerializeField] private AudioSource[] som;
 
     [Header("Weapons")]
     [SerializeField] private GameObject DMGBullet;
@@ -78,10 +79,11 @@ public class Player : MonoBehaviour
         else if(Input.GetButtonDown("Fire3") && activeWeapon == 1)
         {
             activeWeapon = 2;
-            TypeAmmo.color = Color.blue;
+            TypeAmmo.color = Color.yellow;
         }
         if (Input.GetButtonDown("Jump") && activeWeapon == 1 && Ammo > 0)
         {
+            som[0].Play();
             Ammo--;
             CanvasStats.Ammo--;
             canvasMain.GetComponent<CanvasMain>().UpdateAmmo();
@@ -90,6 +92,7 @@ public class Player : MonoBehaviour
         } 
         else if (Input.GetButtonDown("Jump") && activeWeapon == 2 && Ammo > 0)
         {
+            som[0].Play();
             Ammo--;
             CanvasStats.Ammo--;
             canvasMain.GetComponent<CanvasMain>().UpdateAmmo();
@@ -106,6 +109,7 @@ public class Player : MonoBehaviour
         }
         if (other.CompareTag("Debris"))
         {
+            som[3].Play();
             Destroy(other.gameObject);
             CanvasStats.shipLife--;
             canvasMain.GetComponent<CanvasMain>().UpdateShipLife();
@@ -113,12 +117,14 @@ public class Player : MonoBehaviour
         }
         if (other.CompareTag("Meteor"))
         {
+            som[3].Play();
             CanvasStats.shipLife--;
             canvasMain.GetComponent<CanvasMain>().UpdateShipLife();
             transform.position = StartPosition;
         }
         if (other.CompareTag("Valuable"))
         {
+            som[1].Play();
             Destroy(other.gameObject);
             CanvasStats.collectable++;
             canvasMain.GetComponent<CanvasMain>().UpdateCollectable();
@@ -129,6 +135,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "SpaceStation")
         {
+            som[2].Play();
             Ammo = MaxAmmo;
             CanvasStats.Ammo = Ammo;
             canvasMain.GetComponent<CanvasMain>().UpdateAmmo();

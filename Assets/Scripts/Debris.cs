@@ -4,7 +4,7 @@ public class Debris : MonoBehaviour
 {
     [SerializeField] private float speed;
 
-    private Vector2 targetPosition;
+    private Vector3 targetPosition;
 
     void Start()
     {

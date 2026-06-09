@@ -1,8 +1,9 @@
 using System;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,27 +12,22 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button buttonPause;
     [SerializeField] private Button buttonResume;
     [SerializeField] private Button buttonReset;
-    [SerializeField] private Button buttonResetGameOver;
-    [SerializeField] private Button buttonResetWin;
-    [SerializeField] private Button buttonClose;    
-    [SerializeField] private Button buttonCloseGameOver;    
-    [SerializeField] private Button buttonCloseWin;
+    [SerializeField] private Button buttonClose;
     [SerializeField] private Slider sliderVolume;
-    [SerializeField] private Button retryGame;
-    [SerializeField] private Button playAgain;
-    private GameObject canvasMain;
+    [SerializeField] private Button buttonResetGameOver;
+    [SerializeField] private Button buttonCloseGameOver;
+    [SerializeField] private Button buttonResetWin;
+    [SerializeField] private Button buttonCloseWin;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
-        canvasMain = GameObject.Find("CanvasMain");
         buttonPause.onClick.AddListener(ShowWindow);
         buttonResume.onClick.AddListener(HideWindow);
         buttonClose.onClick.AddListener(CloseGame);
         buttonReset.onClick.AddListener(ResetGame);
         buttonResetGameOver.onClick.AddListener(ResetGame);
         buttonResetWin.onClick.AddListener(ResetGame);
-        retryGame.onClick.AddListener(ResetGame);
-        playAgain.onClick.AddListener(ResetGame);
         HideWindow();
         HideWindowGameOver();
         HideWindowWin();
@@ -43,11 +39,17 @@ public class UIManager : MonoBehaviour
 
         if(CanvasStats.shipLife <= 0 ||  CanvasStats.StationLife <= 0)
         {
+            audioSource.Play();
             ShowGameOver();
         }
         if(CanvasStats.deposited >= 20)
         {
             ShowWin();
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            ShowWindow();
         }
     }
 
@@ -65,6 +67,11 @@ public class UIManager : MonoBehaviour
     {
         canvas[1].enabled = false;
         Resume();
+    }
+    private void ShowWindow()
+    {
+        canvas[1].enabled = true;
+        Pause();
     }
     private void HideWindowGameOver()
     {
@@ -87,11 +94,6 @@ public class UIManager : MonoBehaviour
     {
         canvas[3].enabled = false;
         Resume();
-    }
-    private void ShowWindow()
-    {
-        canvas[1].enabled = true;
-        Pause();
     }
 
     void Pause()

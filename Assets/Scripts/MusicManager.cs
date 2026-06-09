@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private float volume;
+    [SerializeField] public float volume;
 
     private AudioSource audioSource;
 

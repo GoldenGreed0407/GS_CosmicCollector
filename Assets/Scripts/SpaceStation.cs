@@ -5,6 +5,7 @@ public class SpaceStation : MonoBehaviour
 {
     private int damage;
     private GameObject canvasMain;
+    [SerializeField] private AudioSource som;
     void Start()
     {
         canvasMain = GameObject.Find("CanvasMain");
@@ -24,13 +25,25 @@ public class SpaceStation : MonoBehaviour
             damage++;
             canvasMain.GetComponent<CanvasMain>().UpdateStationLife();
         }
+        if (other.CompareTag("Valuable"))
+        {
+            Destroy(other.gameObject);
+            float half = 0;
+            half += 0.5f;
+            if (half >= 1)
+            {
+                half -= half;
+                CanvasStats.deposited++;
+                canvasMain.GetComponent <CanvasMain>().UpdateDeposited();
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            damage = 0;
+            damage -= damage;
         }
     }
     IEnumerator Damage(int d)

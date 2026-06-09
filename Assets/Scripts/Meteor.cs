@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Meteor : MonoBehaviour
 {
-    [SerializeField] private GameObject debris;
-    [SerializeField] private GameObject gold;
+    [SerializeField] private GameObject[] debris;
+    [SerializeField] private GameObject[] gold;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class Meteor : MonoBehaviour
 
     IEnumerator spawner()
     {
-        yield return new WaitForSeconds(Random.Range(1,5));
+        yield return new WaitForSeconds(5);
         spawnDebris();
         StartCoroutine(spawner());
     }
@@ -27,16 +27,16 @@ public class Meteor : MonoBehaviour
 
     private void spawnDebris()
     {
-        Instantiate(debris, new Vector3(-21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
-        Instantiate(debris, new Vector3(21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
+        Instantiate(debris[Random.Range(0, 3)], new Vector3(-21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
+        Instantiate(debris[Random.Range(0, 3)], new Vector3(21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
     }
     private void damage()
     {
         float times = Random.Range(1, 3);
         for(int i = 0; i < times; i++)
         {
-            Instantiate(debris, new Vector3(-21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
-            Instantiate(debris, new Vector3(21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
+            Instantiate(debris[Random.Range(0, 3)], new Vector3(-21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
+            Instantiate(debris[Random.Range(0, 3)], new Vector3(21, 0.5f, Random.Range(32, 41)), Quaternion.identity);
         }
     }
 
@@ -45,16 +45,16 @@ public class Meteor : MonoBehaviour
         float side = Random.Range(1, 3);
         if(side <= 1)
         {
-            Instantiate(debris, new Vector3(-21, 0.9f, Random.Range(32, 41)), Quaternion.identity);
+            Instantiate(debris[Random.Range(0, 3)], new Vector3(-21, 0.9f, Random.Range(32, 41)), Quaternion.identity);
         }
         else
         {
-            Instantiate(debris, new Vector3(21, 0.9f, Random.Range(32, 41)), Quaternion.identity);
+            Instantiate(debris[Random.Range(0, 3)], new Vector3(21, 0.9f, Random.Range(32, 41)), Quaternion.identity);
         }
         float amount = Random.Range(1, 3);
         for(int i = 0;i < amount; i++)
         {
-            Instantiate(gold, new Vector3(Random.Range(-10,11), 0.9f, 20), Quaternion.identity);
+            Instantiate(gold[Random.Range(0,3)], new Vector3(Random.Range(-10,11), 0.9f, 20), Quaternion.identity);
         }
     }
 
