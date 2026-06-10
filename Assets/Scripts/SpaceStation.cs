@@ -3,13 +3,13 @@ using System.Collections;
 
 public class SpaceStation : MonoBehaviour
 {
-    private int damage;
+    private int damage = 0;
     private GameObject canvasMain;
     [SerializeField] private AudioSource som;
     void Start()
     {
         canvasMain = GameObject.Find("CanvasMain");
-        StartCoroutine(Damage(damage));
+        StartCoroutine(Damage());
     }
 
     void Update()
@@ -21,8 +21,8 @@ public class SpaceStation : MonoBehaviour
         if (other.CompareTag("Debris") || other.CompareTag("BulletDMG"))
         {
             Destroy(other.gameObject);
+            damage += 1;
             CanvasStats.StationLife -= 5;
-            damage++;
             canvasMain.GetComponent<CanvasMain>().UpdateStationLife();
         }
         if (other.CompareTag("Valuable"))
@@ -46,11 +46,11 @@ public class SpaceStation : MonoBehaviour
             damage -= damage;
         }
     }
-    IEnumerator Damage(int d)
+    IEnumerator Damage()
     {
         yield return new WaitForSeconds(1.0f);
-        CanvasStats.StationLife -= d;
+        CanvasStats.StationLife -= damage;
         canvasMain.GetComponent<CanvasMain>().UpdateStationLife();
-        StartCoroutine(Damage(d));
+        StartCoroutine(Damage());
     }
 }

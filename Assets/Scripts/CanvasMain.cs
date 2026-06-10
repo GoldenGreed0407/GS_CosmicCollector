@@ -15,7 +15,7 @@ public class CanvasMain : MonoBehaviour
         CanvasStats.deposited = 0;
         CanvasStats.shipLife = 3;
         CanvasStats.StationLife = 100;
-        CanvasStats.Ammo = 20;
+        CanvasStats.Ammo = 10;
         UpdateShipLife();
         UpdateStationLife();
         UpdateAmmo();

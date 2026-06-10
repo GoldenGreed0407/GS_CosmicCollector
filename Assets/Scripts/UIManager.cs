@@ -28,6 +28,8 @@ public class UIManager : MonoBehaviour
         buttonReset.onClick.AddListener(ResetGame);
         buttonResetGameOver.onClick.AddListener(ResetGame);
         buttonResetWin.onClick.AddListener(ResetGame);
+        buttonCloseGameOver.onClick.AddListener(CloseGame);
+        buttonCloseWin.onClick.AddListener(CloseGame);
         HideWindow();
         HideWindowGameOver();
         HideWindowWin();

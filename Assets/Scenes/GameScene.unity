@@ -780,7 +780,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 10
 --- !u!222 &367780683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1193,6 +1193,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533088221}
   m_CullTransparentMesh: 1
+--- !u!1001 &617727647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3655621993375864903, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_Name
+      value: Debris3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.69467616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000022320481
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.325539
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334628614412533541, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f80b46be82e483498a5013a85ded316, type: 3}
 --- !u!1 &783511717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +2011,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057032909}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 422f9dc202096974484071c256c75d83, type: 3}
   m_Name: 
@@ -2423,6 +2480,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289741385}
   m_CullTransparentMesh: 1
+--- !u!1001 &1329296594
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.310251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000008409029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.051077
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846092335507865098, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8796170210424281052, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
+      propertyPath: m_Name
+      value: Debris2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9f21f8c12d959a49aafdff6047c69f1, type: 3}
 --- !u!1001 &1364983504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2869,8 +2983,8 @@ MonoBehaviour:
   - {fileID: 1594370155}
   DMGBullet: {fileID: 1892664679593740795, guid: a27f6920e416edf428e3b357eee48c75, type: 3}
   EXTBullet: {fileID: 6961275942895179504, guid: 890e67632c3aad94ea4d358f5f0ea4da, type: 3}
-  Ammo: 20
-  MaxAmmo: 20
+  Ammo: 10
+  MaxAmmo: 10
   WeaponPosition: {fileID: 524252644}
   activeWeapon: 1
   TypeAmmo: {fileID: 367780682}
@@ -5502,3 +5616,5 @@ SceneRoots:
   - {fileID: 783511718}
   - {fileID: 2027518737}
   - {fileID: 822522776}
+  - {fileID: 617727647}
+  - {fileID: 1329296594}
